@@ -22,13 +22,12 @@ def get_level(exp):
 while (True):
     print("\nCrie um herói digitando seu nome e o XP: (deixe vazio para sair)\n")
 
-    nome = input("-Nome:")
-    if nome == "":
-        break
-
     try:
+        nome = input("-Nome:")
+        if nome == "": break
+
         exp = int(input("-XP:"))
-    except ValueError:
+    except (ValueError, EOFError):
         break
 
     print(f"\nO Herói de nome {nome} está no nível de {get_level(exp)}")
