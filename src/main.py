@@ -1,5 +1,3 @@
-print("\nBem vindo ao Classificador de heroi:")
-
 def get_level(exp):
     if exp <= 1000:
         return "Ferro"
@@ -19,15 +17,20 @@ def get_level(exp):
         return "Radiante"
 
 
-while (True):
+print("\nBem vindo ao Classificador de heroi:")
+
+while True:
     print("\nCrie um herói digitando seu nome e o XP: (deixe vazio para sair)\n")
 
     try:
         nome = input("-Nome:")
-        if nome == "": break
+        if nome == "":
+            break
 
         exp = int(input("-XP:"))
+        nivel = get_level(exp)
+
     except (ValueError, EOFError):
         break
 
-    print(f"\nO Herói de nome {nome} está no nível de {get_level(exp)}")
+    print(f"\nO Herói de nome {nome} está no nível de {nivel}")
